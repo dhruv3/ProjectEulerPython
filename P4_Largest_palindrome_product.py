@@ -9,19 +9,19 @@ myList = []
 
 def checkPalindrome(product):
     temp = product
-    while temp > 1:
+    while temp >= 1:
         myList.append(temp % 10)
-        temp = temp / 10
+        temp = int(temp / 10)
         
     length = len(str(product))
     if(length == 5):
         if(myList[0] == myList[4] and myList[1] == myList[3]):
             return True
-    else:
+    elif(length == 6):
         if(myList[0] == myList[5] and myList[1] == myList[4] and myList[2] == myList[3]):
             return True
-        
-    return False
+    else:    
+        return False
 
 
 for i in range(101, 1000, 1):
